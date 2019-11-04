@@ -14,7 +14,7 @@ public class Author {
     private String firstName;
     private String lastName;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", cascade = {CascadeType.ALL})
     private Set<Book> books = new HashSet<>();
 
     public Author() {
@@ -82,7 +82,7 @@ public class Author {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
+                //", books=" + books +
                 '}';
     }
 }
